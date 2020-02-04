@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # Bulma for ui framework
 gem 'bulma-rails', "~> 0.8.0"
 
+# Font Awesome 5
+gem 'font_awesome5_rails'
+
 # Devise for user auth
 gem 'devise'
 
