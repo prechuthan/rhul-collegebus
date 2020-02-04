@@ -15,10 +15,15 @@
     <div class="navbar-start">
       <a class="navbar-item">Buses</a>
       <%= link_to "Stops", stops_path, class: "navbar-item" %>
+      <a class="navbar-item">About</a>
     </div>
 
     <div class="navbar-end">
-      <a class="navbar-item">About</a>
+      <% if user_signed_in? %>
+        <%= link_to 'Logout', destroy_user_session_path, class: "navbar-item" %>
+      <% else %>
+        <%= link_to 'Login', new_user_session_path, class: "navbar-item" %>
+      <% end %>
     </div>
   </div>
 </nav>
