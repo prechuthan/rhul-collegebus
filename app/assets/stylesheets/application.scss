@@ -25,3 +25,17 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
+
+.cb-container {
+  margin-top: 3.25rem;
+  border: 1px solid black;
+}
+
+.landing-logo {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.landing-logo > img {
+  width: 12rem;
+}
