@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  # / landing page
   root 'welcome#index'
 
-  resource :stops, only: [:show]
+  # /stops url
+  resources :stops, only: [:index]
 
-  match '/dashboard', to: "dashboard#index", via: "get"
-    #match '/stops', to: "stops#index", via: "get"
+  # /dashboard url
+  resources :dashboard, only: [:index]
 
+  # /dashboard/stops resources url
+  namespace :dashboard do
+    resources :stops
+  end
 
 end
