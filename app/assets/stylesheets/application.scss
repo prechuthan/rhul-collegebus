@@ -26,9 +26,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
+
+// Landing
 .cb-container {
-  margin-top: 3.25rem;
-  border: 1px solid black;
+  margin-top: 3rem;
 }
 
 .landing-logo {
@@ -38,4 +39,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .landing-logo > img {
   width: 12rem;
+}
+
+// Dashboard
+.cb-dashboard-container {
+  margin-top: 3rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
