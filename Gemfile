@@ -31,6 +31,9 @@ gem 'font_awesome5_rails'
 # Devise for user auth
 gem 'devise'
 
+# Simple form helper
+gem 'simple_form'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
