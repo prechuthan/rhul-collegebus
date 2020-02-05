@@ -4,10 +4,12 @@
 
     <div class="column is-10 content">
       <h1>Routing - Stops
-        <a class="button is-success is-rounded">
-          <span class="icon is-small"><%= fa_icon('plus', type: :solid) %></span>
-          <span>Add stop</span>
-        </a>
+        <%= link_to new_dashboard_stop_path, class: "button is-success is-rounded" do %>
+          <p>
+            <span class="icon is-small"><%= fa_icon('plus', type: :solid) %></span>
+            <span>Add stop</span>
+          </p>
+        <% end %>
       </h1>
 
       <table class="table is-hoverable is-narrow">

@@ -1,0 +1,18 @@
+<div class="cb-dashboard-container">
+  <div class="columns">
+    <%= render 'shared/dashboard_menu' %>
+
+    <div class="column is-10 content">
+      <h1>New stop</h1>
+
+
+
+      <%= link_to dashboard_stops_path, class: "button is-link is-rounded" do %>
+        <p>
+          <span class="icon is-small"><%= fa_icon('times', type: :solid) %></span>
+          <span>Cancel</span>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>
