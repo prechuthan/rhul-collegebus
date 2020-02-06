@@ -5,13 +5,30 @@
     <div class="column is-10 content">
       <h1>New stop</h1>
 
+      <%= form_with model: @stop do |f| %>
+        <div class="field">
+          <p class="control has-icons-left">
+            <%= f.text_field :name, placeholder: "Stop Name", class: "input" %>
+            <span class="icon is-small is-left">
+              <i class="fas fa-map-marker-alt"></i>
+            </span>
+          </p>
+        </div>
+        <div class="buttons">
+          <%= link_to dashboard_stops_path, class: "button is-danger is-rounded" do %>
+            <p>
+              <span class="icon is-small"><%= fa_icon('times', type: :solid) %></span>
+              <span>Cancel</span>
+            </p>
+          <% end %>
 
-
-      <%= link_to dashboard_stops_path, class: "button is-link is-rounded" do %>
-        <p>
-          <span class="icon is-small"><%= fa_icon('times', type: :solid) %></span>
-          <span>Cancel</span>
-        </p>
+          <%= button_tag type: 'submit', class: "button is-success is-rounded" do %>
+            <p>
+              <span class="icon is-small"><%= fa_icon('plus', type: :solid) %></span>
+              <span>Create</span>
+            </p>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>
