@@ -1,0 +1,68 @@
+<div class="cb-dashboard-container">
+  <div class="columns">
+    <%= render 'shared/dashboard_menu' %>
+
+    <div class="column is-10 content">
+      <h1>Routing - Timetable
+        <%= link_to new_dashboard_timetable_path, class: "button is-success is-rounded" do %>
+          <p>
+            <span class="icon is-small"><%= fa_icon('plus', type: :solid) %></span>
+            <span>Add timetable</span>
+          </p>
+        <% end %>
+      </h1>
+
+      <table class="table is-hoverable is-narrow">
+        <thead>
+        <tr>
+          <th>Timetable ID</th>
+          <th>Bus Service No.</th>
+          <th>Departure Time</th>
+          <th>Departure Stop</th>
+          <th>Arrival Time</th>
+          <th>Arrival Stop</th>
+          <th>Weekday Service</th>
+          <th>Weekend Service</th>
+          <th>Term-Time Service</th>
+          <th>Winter Service</th>
+          <th>Easter Service</th>
+          <th>Summer Service</th>
+          <th>Manage</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @timetables.each do |tt| %>
+          <tr>
+            <td><%= tt.id %></td>
+            <td><%= tt.bus.service_number %></td>
+            <td><%= tt.departure_time %></td>
+            <td><%= tt.departure_stop.name %></td>
+            <td><%= tt.arrival_time %></td>
+            <td><%= tt.arrival_stop.name %></td>
+            <td><%= tt.is_operational_weekday %></td>
+            <td><%= tt.is_operational_weekend %></td>
+            <td><%= tt.is_operational_term %></td>
+            <td><%= tt.is_operational_winter %></td>
+            <td><%= tt.is_operational_easter %></td>
+            <td><%= tt.is_operational_summer %></td>
+            <td>
+              <a class="button is-rounded is-small is-info control">
+                <span class="icon">
+                  <%= fa_icon('pencil-alt', type: :solid) %>
+                </span>
+                <span>Modify</span>
+              </a>
+              <a class="button is-rounded is-small is-danger control">
+                <span class="icon">
+                  <%= fa_icon('trash-alt', type: :solid) %>
+                </span>
+                <span>Delete</span>
+              </a>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
