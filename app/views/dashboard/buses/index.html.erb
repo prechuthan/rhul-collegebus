@@ -1,0 +1,52 @@
+<div class="cb-dashboard-container">
+  <div class="columns">
+    <%= render 'shared/dashboard_menu' %>
+
+    <div class="column is-10 content">
+      <h1>Routing - Buses
+        <%= link_to new_dashboard_stop_path, class: "button is-success is-rounded" do %>
+          <p>
+            <span class="icon is-small"><%= fa_icon('plus', type: :solid) %></span>
+            <span>Add bus</span>
+          </p>
+        <% end %>
+      </h1>
+
+      <table class="table is-hoverable is-narrow">
+        <thead>
+        <tr>
+          <th>Bus ID</th>
+          <th>Service Number</th>
+          <th>Created On</th>
+          <th>Last Modified</th>
+          <th>Manage</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @buses.each do |bus| %>
+          <tr>
+            <td><%= bus.id %></td>
+            <td><%= bus.name %></td>
+            <td><%= bus.created_at %></td>
+            <td><%= bus.updated_at %></td>
+            <td>
+              <a class="button is-rounded is-small is-info control">
+                <span class="icon">
+                  <%= fa_icon('pencil-alt', type: :solid) %>
+                </span>
+                <span>Modify</span>
+              </a>
+              <a class="button is-rounded is-small is-danger control">
+                <span class="icon">
+                  <%= fa_icon('trash-alt', type: :solid) %>
+                </span>
+                <span>Delete</span>
+              </a>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
