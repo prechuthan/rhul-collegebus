@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_07_123452) do
+ActiveRecord::Schema.define(version: 2020_02_07_134356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,25 @@ ActiveRecord::Schema.define(version: 2020_02_07_123452) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "timetables", force: :cascade do |t|
+    t.bigint "bus_id", null: false
+    t.time "departure_time"
+    t.time "arrival_time"
+    t.bigint "departure_stop_id", null: false
+    t.bigint "arrival_stop_id", null: false
+    t.boolean "is_operational_weekday"
+    t.boolean "is_operational_weekend"
+    t.boolean "is_operational_term"
+    t.boolean "is_operational_winter"
+    t.boolean "is_operational_easter"
+    t.boolean "is_operational_summer"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["arrival_stop_id"], name: "index_timetables_on_arrival_stop_id"
+    t.index ["bus_id"], name: "index_timetables_on_bus_id"
+    t.index ["departure_stop_id"], name: "index_timetables_on_departure_stop_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -39,4 +58,7 @@ ActiveRecord::Schema.define(version: 2020_02_07_123452) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "timetables", "buses"
+  add_foreign_key "timetables", "stops", column: "arrival_stop_id"
+  add_foreign_key "timetables", "stops", column: "departure_stop_id"
 end
