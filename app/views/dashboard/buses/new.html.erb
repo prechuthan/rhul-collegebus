@@ -3,14 +3,14 @@
     <%= render 'shared/dashboard_menu' %>
 
     <div class="column is-10 content">
-      <h1>New Stop</h1>
+      <h1>New Bus</h1>
 
-      <%= form_with model: [:dashboard, @stop] do |f| %>
+      <%= form_with model: [:dashboard, @bus] do |f| %>
         <div class="field">
           <p class="control has-icons-left">
-            <%= f.text_field :name, placeholder: "Stop Name (e.g. Egham Station)", class: "input" %>
+            <%= f.text_field :name, placeholder: "Service Number (e.g. RH1)", class: "input" %>
             <span class="icon is-small is-left">
-              <i class="fas fa-map-marker-alt"></i>
+              <i class="fas fa-bus"></i>
             </span>
           </p>
         </div>
@@ -24,7 +24,7 @@
 
           <%= button_tag type: 'submit', class: "button is-success is-rounded" do %>
             <p>
-              <span class="icon is-small"><%= fa_icon('tick', type: :solid) %></span>
+              <span class="icon is-small"><%= fa_icon('check', type: :solid) %></span>
               <span>Confirm</span>
             </p>
           <% end %>

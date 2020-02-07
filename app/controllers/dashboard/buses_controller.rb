@@ -5,5 +5,8 @@ class Dashboard::BusesController < ApplicationController
     @buses = Bus.all
   end
 
+  def new
+    @bus = Bus.new
+  end
 
 end
