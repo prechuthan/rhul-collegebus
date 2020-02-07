@@ -8,14 +8,14 @@
       <%= form_with model: [:dashboard, @bus] do |f| %>
         <div class="field">
           <p class="control has-icons-left">
-            <%= f.text_field :name, placeholder: "Service Number (e.g. RH1)", class: "input" %>
+            <%= f.text_field :service_number, placeholder: "Service Number (e.g. RH1)", class: "input" %>
             <span class="icon is-small is-left">
               <i class="fas fa-bus"></i>
             </span>
           </p>
         </div>
         <div class="buttons">
-          <%= link_to dashboard_stops_path, class: "button is-danger is-rounded" do %>
+          <%= link_to dashboard_buses_path, class: "button is-danger is-rounded" do %>
             <p>
               <span class="icon is-small"><%= fa_icon('times', type: :solid) %></span>
               <span>Cancel</span>
