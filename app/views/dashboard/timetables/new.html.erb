@@ -1,0 +1,38 @@
+<div class="cb-dashboard-container">
+  <div class="columns">
+    <%= render 'shared/dashboard_menu' %>
+
+    <div class="column is-10 content">
+      <h1>New Timetable</h1>
+
+      <%= form_with model: [:dashboard, @timetable] do |f| %>
+        <div class="field">
+          <p class="control has-icons-left">
+            <span class="select">
+              <% bus_options = options_from_collection_for_select(@buses, 'id', 'service_number') %>
+              <%= f.select :bus_id, bus_options, class: "select"%>
+            </span>
+            <span class="icon is-small is-left">
+              <i class="fas fa-bus"></i>
+            </span>
+          </p>
+        </div>
+        <div class="buttons">
+          <%= link_to dashboard_buses_path, class: "button is-danger is-rounded" do %>
+            <p>
+              <span class="icon is-small"><%= fa_icon('times', type: :solid) %></span>
+              <span>Cancel</span>
+            </p>
+          <% end %>
+
+          <%= button_tag type: 'submit', class: "button is-success is-rounded" do %>
+            <p>
+              <span class="icon is-small"><%= fa_icon('check', type: :solid) %></span>
+              <span>Confirm</span>
+            </p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

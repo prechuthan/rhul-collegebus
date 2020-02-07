@@ -5,6 +5,9 @@ class Dashboard::TimetablesController < ApplicationController
   end
 
   def new
+    @buses = Bus.all
+    @stops = Stop.all
+
     @timetable = Timetable.new
   end
 
