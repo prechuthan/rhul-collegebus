@@ -9,7 +9,13 @@ class Dashboard::StopsController < ApplicationController
   end
 
   def create
-    render plain: params[:stop].inspect
+    @stop = Stop.new(stop_params)
+
+    if @stop.save
+      redirect_to dashboard_stops_path
+    else
+      render `new`
+    end
   end
 
   private
