@@ -7,4 +7,13 @@ class Dashboard::StopsController < ApplicationController
   def new
     @stop = Stop.new
   end
+
+  def create
+    render plain: params[:stop].inspect
+  end
+
+  private
+    def stop_params
+      params.require(:stop).permit(:name)
+    end
 end

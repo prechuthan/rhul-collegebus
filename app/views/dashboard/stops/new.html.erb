@@ -5,7 +5,7 @@
     <div class="column is-10 content">
       <h1>New stop</h1>
 
-      <%= form_with model: @stop do |f| %>
+      <%= form_with model: [:dashboard, @stop] do |f| %>
         <div class="field">
           <p class="control has-icons-left">
             <%= f.text_field :name, placeholder: "Stop Name", class: "input" %>
