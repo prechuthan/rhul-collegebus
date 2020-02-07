@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   # /dashboard/stops resources url
   namespace :dashboard do
+    resources :buses
     resources :stops
   end
 
