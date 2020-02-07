@@ -2,6 +2,7 @@ class Dashboard::StopsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @stops = Stop.all
   end
 
   def new

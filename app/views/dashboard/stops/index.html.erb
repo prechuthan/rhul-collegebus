@@ -23,11 +23,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>RHUL</td>
-            <td>5 January 2020 15:45</td>
-            <td>4 February 2020 21:32</td>
+          <% @stops.each do |stop| %>
+            <tr>
+            <td><%= stop.id %></td>
+            <td><%= stop.name %></td>
+            <td><%= stop.created_at %></td>
+            <td><%= stop.updated_at %></td>
             <td>
               <a class="button is-rounded is-small is-info control">
                 <span class="icon">
@@ -43,6 +44,7 @@
               </a>
             </td>
           </tr>
+          <% end %>
         </tbody>
       </table>
     </div>
