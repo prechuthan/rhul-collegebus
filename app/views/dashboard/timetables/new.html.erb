@@ -17,6 +17,68 @@
             </span>
           </p>
         </div>
+        <div class="field has-addons">
+          <p class="control has-icons-left">
+            <span class="select">
+              <% stop_options = options_from_collection_for_select(@stops, 'id', 'name') %>
+              <%= f.select :departure_stop_id, stop_options, class: "select"%>
+            </span>
+            <span class="icon is-small is-left">
+              <i class="fas fa-map-marker-alt"></i>
+            </span>
+          </p>
+
+          <p class="control has-icons-left">
+            <%= f.text_field :departure_time, placeholder: "Departure Time (e.g. 08:00)", class: "input" %>
+            <span class="icon is-small is-left">
+              <i class="fas fa-clock"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field has-addons">
+          <p class="control has-icons-left">
+            <span class="select">
+              <% stop_options = options_from_collection_for_select(@stops, 'id', 'name') %>
+              <%= f.select :arrival_stop_id, stop_options, class: "select"%>
+            </span>
+            <span class="icon is-small is-left">
+              <i class="fas fa-map-marker-alt"></i>
+            </span>
+          </p>
+
+          <p class="control has-icons-left">
+            <%= f.text_field :arrival_time, placeholder: "Arrival Time (e.g. 08:15)", class: "input" %>
+            <span class="icon is-small is-left">
+              <i class="fas fa-clock"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <label class="checkbox">
+            <%= f.check_box :is_operational_weekday %>
+            Weekday
+          </label>
+          <label class="checkbox">
+            <%= f.check_box :is_operational_weekend %>
+            Weekend
+          </label>
+          <label class="checkbox">
+            <%= f.check_box :is_operational_term %>
+            Term-Time
+          </label>
+          <label class="checkbox">
+            <%= f.check_box :is_operational_winter %>
+            Winter
+          </label>
+          <label class="checkbox">
+            <%= f.check_box :is_operational_easter %>
+            Easter
+          </label>
+          <label class="checkbox">
+            <%= f.check_box :is_operational_summer %>
+            Summer
+          </label>
+        </div>
         <div class="buttons">
           <%= link_to dashboard_buses_path, class: "button is-danger is-rounded" do %>
             <p>

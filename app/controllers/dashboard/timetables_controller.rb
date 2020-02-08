@@ -17,7 +17,7 @@ class Dashboard::TimetablesController < ApplicationController
 
   private
   def timetable_params
-    params.require(:bus).permit(:bus_id, :departure_time, :departure_stop_id, :arrival_time, :arrival_stop_id,
+    params.require(:timetable).permit(:bus_id, :departure_time, :departure_stop_id, :arrival_time, :arrival_stop_id,
                                 :is_operational_weekday, :is_operational_weekend, :is_operational_term,
                                 :is_operational_winter, :is_operational_easter, :is_operational_summer,)
   end
