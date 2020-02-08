@@ -13,6 +13,12 @@ class Dashboard::TimetablesController < ApplicationController
 
   def create
     @timetable = Timetable.new(timetable_params)
+
+    if @timetable.save
+      redirect_to dashboard_timetables_path
+    else
+      render `new`
+    end
   end
 
   private
